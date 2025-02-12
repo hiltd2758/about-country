@@ -36,17 +36,16 @@ searchBtn.addEventListener("click", async () => {
   }
 
   countryInfo.innerHTML = `
+  <div class="country-card">
     <h2>${country1.name.common}</h2>
-    <img src="${country1.flags.svg}" class="flag-img">
-    <p>Population: ${country1.population.toLocaleString()}</p>
-    <p>Area: ${country1.area.toLocaleString()} km²</p>
-    <p>Capital: ${country1.capital?.[0] || "N/A"}</p>
-    <p>Region: ${country1.region}</p>
-    <p>Subregion: ${country1.subregion || "N/A"}</p>
-    <p>Languages: ${Object.values(country1.languages || {}).join(", ")}</p>
-    <p>Currencies: ${Object.values(country1.currencies || {}).map(c => c.name).join(", ")}</p>
-    <p>Timezones: ${country1.timezones.join(", ")}</p>
-  `;
+    <img src="${country1.flags.svg}">
+    <p><strong>Population:</strong> ${country1.population.toLocaleString()}</p>
+    <p><strong>Area:</strong> ${country1.area.toLocaleString()} km²</p>
+    <p><strong>Capital:</strong> ${country1.capital?.[0] || "N/A"}</p>
+    <p><strong>Region:</strong> ${country1.region}</p>
+  </div>
+`;
+
 
   battleBtn.classList.remove("hidden"); // Hiện nút Battle
 });
@@ -82,7 +81,6 @@ battleStartBtn.addEventListener("click", async () => {
   let winnerPopulation = population1 > population2 ? country1.name.common : country2.name.common;
   let winnerArea = area1 > area2 ? country1.name.common : country2.name.common;
   let winnerGdp = gdp1 > gdp2 ? country1.name.common : country2.name.common;
-  let winnerTimezones = timezone1 > timezone2 ? country1.name.common : country2.name.common;
 
   result.innerHTML = `
     <h2>Country Battle Royale</h2>
@@ -116,6 +114,5 @@ battleStartBtn.addEventListener("click", async () => {
     <h3>🏆 Winner (Population): ${winnerPopulation}</h3>
     <h3>🏆 Winner (Area): ${winnerArea}</h3>
     <h3>🏆 Winner (GDP Gini Index): ${winnerGdp}</h3>
-    <h3>🏆 Winner (Timezones Count): ${winnerTimezones}</h3>
   `;
 });

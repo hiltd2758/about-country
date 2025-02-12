@@ -4,30 +4,35 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
   }
-  
   body {
-    background: linear-gradient(135deg, #3d64e6, #1e3a8a);
+    background-image: url("bg.jpg");
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
-  }
-  
+}
+
   .container {
-    background: #ffffff;
+    background: rgba(0, 0, 0, 0.6); /* Đen trong suốt */
+    border-radius: 15px;
     width: 90vw;
     max-width: 40em;
     padding: 2.5em;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* Đổ bóng đậm hơn */
     text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Viền trắng nhẹ */
   }
-  
+  .container h2, h3 {
+    color: #d1e8ff; /* Xanh nhạt huyền ảo */
+}
   .container h2 {
     font-size: 1.8em;
     font-weight: 600;
-    color: #222a43;
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 1em;
@@ -44,21 +49,43 @@
     flex: 1;
     min-width: 150px;
     padding: 10px;
-    border: 2px solid #3d64e6;
+    border: 2px solid #508cff;
+    background: rgba(255, 255, 255, 0.1); 
+    color: #d1e8ff;
     border-radius: 8px;
     font-size: 1em;
     outline: none;
     transition: 0.3s;
   }
-  
+  .search-wrapper input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+.battle-section input::placeholder{
+  color: rgba(255, 255, 255, 0.5);
+
+}
+.battle-section input{
+  flex: 1;
+  min-width: 150px;
+  padding: 10px;
+  border: 2px solid #508cff;
+  background: rgba(255, 255, 255, 0.1); 
+  color: #d1e8ff;
+  border-radius: 8px;
+  font-size: 1em;
+  outline: none;
+  transition: 0.3s;
+}
   .search-wrapper input:focus {
     border-color: #ff465a;
   }
   
   .search-wrapper button {
     font-size: 1em;
-    background: linear-gradient(135deg, #ff465a, #e02d3c);
-    color: white;
+      background: linear-gradient(135deg, #ff6188, #ff465a);
+      color: white;
+      border: none;
+      box-shadow: 0 4px 10px rgba(255, 97, 136, 0.4);
     padding: 0.8em 1.5em;
     border: none;
     border-radius: 8px;
@@ -67,10 +94,9 @@
   }
   
   .search-wrapper button:hover {
-    background: linear-gradient(135deg, #e02d3c, #c91b2b);
-    box-shadow: 0 4px 15px rgba(224, 45, 60, 0.4);
-  }
-  
+    background: linear-gradient(135deg, #ff465a, #d63447);
+    box-shadow: 0 4px 15px rgba(255, 97, 136, 0.6);
+}
   #result {
     margin-top: 1.5em;
   }
@@ -104,15 +130,13 @@
   h3 {
     font-size: 1.2em;
     font-weight: bold;
-    color: #222a43;
   }
   
   p {
     font-size: 1em;
-    color: #5d6274;
-    margin-top: 0.5em;
+    color: #b0b8c5; /* Xám nhạt hơn, tránh bị chìm vào nền */
+
   }
-  
   .hidden {
     display: none;
   }
@@ -128,8 +152,7 @@
   .vs {
     font-size: 2em;
     font-weight: bold;
-    color: #ff465a;
-  }
+    color: #ff8fa3;  }
   
   /* Ẩn battle ban đầu */
 .hidden {
@@ -165,15 +188,16 @@
     background-color: #d63447;
   }
   
-  /* Quốc gia */
   .country {
-    background: #f8f8f8;
-    padding: 15px;
+    background: rgba(255, 255, 255, 0.1); /* Trắng trong suốt */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Viền sáng nhẹ */
     border-radius: 10px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    box-shadow: 0 4px 15px rgba(0, 128, 255, 0.2); /* Đổ bóng xanh dương nhẹ */
     text-align: center;
     width: 45%;
-  }
+    backdrop-filter: blur(10px); /* Hiệu ứng kính mờ */
+}
   
   .flag-img {
     width: 100px;
@@ -202,5 +226,23 @@
     color: red;
     font-weight: bold;
     margin-top: 10px;
+  }
+  
+
+
+  .country-card {
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+    background: rgba(20, 30, 50, 0.9); /* Xanh đậm không trong suốt */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Viền sáng nhẹ */
+    box-shadow: 0 4px 20px rgba(0, 128, 255, 0.3); /* Hiệu ứng nổi bật hơn */
+    backdrop-filter: none; /* Không làm mờ */
+  }
+  .country-card img {
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
   }
   
